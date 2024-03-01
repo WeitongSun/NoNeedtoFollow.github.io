@@ -13,11 +13,11 @@ html, body {
     animation: floatBackground 10s ease-in-out infinite;
 
 }
-@keyframes floatBackground {
+/* @keyframes floatBackground {
     0% { background-position: 0 0; }
     50% { background-position: 10px 20px; }
     100% { background-position: 0 0; }
-}
+} */
 
 .content-wrapper {
     flex: 1;
