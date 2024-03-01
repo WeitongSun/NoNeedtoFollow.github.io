@@ -60,12 +60,22 @@ html, body {
 
 .cursor {
     display: inline-block;
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* .cursor {
+    display: inline-block;
     margin-left: 5px;
     animation: blink 1s infinite step-start;
 }
 @keyframes blink {
     50% { opacity: 0; }
-}
+} */
 
 .slider-container {
     width: 100%;
