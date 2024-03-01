@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    background-color: black;
 
     /* Assuming you're applying the background to the body */
     background-image: url('your-background-image.jpg');

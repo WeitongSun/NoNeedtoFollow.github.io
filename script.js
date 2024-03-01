@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const timelineData = [
         { img: 'imgs/Musong.png', text: '“I have gradually come to understand what being a parent means: it means that the rest of your life is merely following your children with your eyes, slowly watching them move further and further away. So you are standing on the end of the path, as their silhouette is dribbling away in the corner of the road and their shadow silently tells you: ‘No need to follow’.” This is a paragraph from Musong by Lung Yingtai.' },
-        { img: '', text: ' I first encountered that paragraph in fifth grade as part of an assignment. The task was to read the first chapter of Lung Yingtai’s Musong, choose three paragraphs I liked, and share them with the class. It was given to us by our new Chinese teacher, a woman in her fifties with black dry hair mixed with white strands.'},
+
+        { img: 'imgs/back.jpeg', text: "I first encountered that paragraph in fifth grade as part of an assignment. The task was to read the first chapter of Lung Yingtai’s Musong, choose three paragraphs I liked, and share them with the class. It was given to us by our new Chinese teacher, a woman in her fifties with black dry hair mixed with white strands."},
+        
         { img: 'image3.jpg', text: 'Event 3 Description' },
         { img: 'image4.jpg', text: 'Event 4 Description' },
         { img: 'image5.jpg', text: 'Event 5 Description' }
@@ -54,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate font size and image width adjustments
         let initialFontSize = 14; // Starting font size in pixels
         let finalFontSize = 24; // Final font size in pixels
-        let initialImageWidth = 100; // Starting image width percentage
-        let finalImageWidth = 60; // Final image width percentage
+        let initialImageWidth = 70; // Starting image width percentage
+        let finalImageWidth = 45; // Final image width percentage
         let fontSizeIncrement = (finalFontSize - initialFontSize) / text.length;
         let imageWidthDecrement = (initialImageWidth - finalImageWidth) / text.length;
     
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
        typeWriterEffect(textDisplay, data.text, 80, imageDisplay); // Adjust the typing speed as desired
 
         // Update the background color to match the new image
-        updateBackgroundColor(imageDisplay);
+        //updateBackgroundColor(imageDisplay);
     }
 
     slider.addEventListener('input', updateContent);
