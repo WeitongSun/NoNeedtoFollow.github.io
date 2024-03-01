@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Need to Follow</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>No Need to Follow</h1>
-    </main>
+
+    <div class="content-wrapper">
+        <div class="grid-container">
+            <header class="header">No Need to Follow</header>
+            <div class="image-container">
+                <img id="imageDisplay" src="" alt="Timeline Image">
+            </div>
+            <div class="text-description" id="textDisplay">Slide the slider to change the content.</div>
+        </div>
+    </div>
+    <div class="slider-container">
+        <input type="range" id="timelineSlider" min="0" max="3" value="0" step="1">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
