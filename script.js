@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const timelineData = [
         { img: 'imgs/Musong.png', text: '“I have gradually come to understand what being a parent means: it means that the rest of your life is merely following your children with your eyes, slowly watching them move further and further away. So you are standing on the end of the path, as their silhouette is dribbling away in the corner of the road and their shadow silently tells you: ‘No need to follow’.” This is a paragraph from Musong by Lung Yingtai.' },
-        { img: 'image2.jpg', text: 'Event 2 Description' },
+        { img: '', text: ' I first encountered that paragraph in fifth grade as part of an assignment. The task was to read the first chapter of Lung Yingtai’s Musong, choose three paragraphs I liked, and share them with the class. It was given to us by our new Chinese teacher, a woman in her fifties with black dry hair mixed with white strands.'},
         { img: 'image3.jpg', text: 'Event 3 Description' },
         { img: 'image4.jpg', text: 'Event 4 Description' },
         { img: 'image5.jpg', text: 'Event 5 Description' }
@@ -45,24 +45,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function typeWriterEffect(element, text, typingSpeed, imageElement) {
         let i = 0;
-        element.innerHTML = ""; // Clear existing content
+        element.innerHTML = '<span class="cursor"></span>'; // Initialize with cursor
     
-        // Initial sizes
-        let initialFontSize = 24; // Starting font size in pixels
-        let finalFontSize = 34; // Final font size in pixels
-        let initialImageWidth = 80; // Starting image width percentage
-        let finalImageWidth = 40; // Final image width percentage
+        // Cursor styles
+        const cursorHtml = '<span class="cursor">|</span>';
+        element.innerHTML += cursorHtml; // Add cursor to the element
     
-        // Calculate increments
+        // Calculate font size and image width adjustments
+        let initialFontSize = 14; // Starting font size in pixels
+        let finalFontSize = 24; // Final font size in pixels
+        let initialImageWidth = 100; // Starting image width percentage
+        let finalImageWidth = 60; // Final image width percentage
         let fontSizeIncrement = (finalFontSize - initialFontSize) / text.length;
         let imageWidthDecrement = (initialImageWidth - finalImageWidth) / text.length;
     
         function typing() {
             if (i < text.length) {
-                element.innerHTML += text.charAt(i);
+                element.innerHTML = element.innerHTML.substring(0, element.innerHTML.length - cursorHtml.length); // Remove cursor temporarily
+                element.innerHTML += text.charAt(i) + cursorHtml; // Add next character and cursor
                 element.style.fontSize = `${initialFontSize + fontSizeIncrement * i}px`;
                 imageElement.style.width = `${initialImageWidth - imageWidthDecrement * i}%`;
-    
                 i++;
                 setTimeout(typing, typingSpeed);
             }
@@ -79,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // textDisplay.textContent = data.text;
 
        // Pass the image element along with the text element to the typewriter effect function
-       typeWriterEffect(textDisplay, data.text, 50, imageDisplay); // Adjust the typing speed as desired
+       typeWriterEffect(textDisplay, data.text, 80, imageDisplay); // Adjust the typing speed as desired
 
         // Update the background color to match the new image
         updateBackgroundColor(imageDisplay);
